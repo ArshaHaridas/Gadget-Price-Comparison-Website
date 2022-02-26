@@ -1,0 +1,85 @@
+<!--{% extends 'user/user_base.html' %}-->
+{% load static %}
+
+{% block title %}
+    <title>Price Compare</title>
+    <style>
+
+        body {
+            min-height: 100vh;
+        }
+
+
+        .social-link {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border-radius: 50%;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover,
+        .social-link:focus {
+            background: #ddd;
+            text-decoration: none;
+            color: #555;
+        }
+
+        img {
+            height: 30vh;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="container py-5">
+        <!-- For Demo Purpose-->
+        <header class="text-center mb-5">
+            <!--<h2 class="display-4 font-weight-bold">Price Compare</h2>-->
+            <br>
+            <center><h3 class="font-weight-bold mb-2">Comparison of {{ product_name }}</h3></center>
+        </header>
+
+        <div class="row pb-5 mb-4">
+            {% for key,value in products.items %}
+                <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                    <!-- Card-->
+                    <div class="card rounded shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <br>
+                            <br>
+                            <center>
+                            <img src="{{ value.image }}" alt="" class="d-block mx-auto mb-3">
+                                <br><br>
+
+                            <p class="small text-muted font-italic">{{ value.title }}</p>
+                            <p><b>{{ value.price }}</b></p>
+                                <b><P><font color="red"> {{ value.f_rating }} </font></P></b>
+                                <h5><a href="{{ value.url }}" class="text-dark"><font color="green">Click to visit {{ value.site }}</font></a></h5>
+                            <br>
+
+                            <td><a href="add_wish?id={{ value.id1 }}&&sitename={{ value.site }}&&title={{ value.title }}&&images={{ value.image }}&&url={{ value.url }}&&price={{ value.price }}&&nam={{ product_name }}" class=" btn btn-success">Add to WishList</a></td>
+
+                        </div>
+                    </div>
+                </div>
+            </center>
+            {% endfor %}
+        </div>
+    </div>
+    </form>
+<br>
+<br><br><br>
+<script>(function(w, d) { w.CollectId = "62178d97615a07609d71e1eb"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

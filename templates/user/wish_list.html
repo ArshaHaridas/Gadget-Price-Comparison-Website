@@ -1,0 +1,64 @@
+ {% extends 'user/user_base.html' %}
+{% load static %}
+{% block content %}
+
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box"><br><br><br>
+            <h1 class="title-single">Wish List...</h1><br><br>
+{#            <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>#}
+          </div>
+        </div>
+{#        <div class="col-md-12 col-lg-4">#}
+{#          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">#}
+{#            <ol class="breadcrumb">#}
+{#              <li class="breadcrumb-item">#}
+{#                <a href="index.html">Home</a>#}
+{#              </li>#}
+{#              <li class="breadcrumb-item active" aria-current="page">#}
+{#                Contact#}
+{#              </li>#}
+{#            </ol>#}
+{#          </nav>#}
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+
+  <!--/ Contact Star /-->
+
+   <table class="table table-bordered table-striped table-hover" style="width: 1500px">
+<th class="info" style="background-color: lightgreen;">Name</th>
+<th class="info" style="background-color: lightgreen;">Site</th>
+<th class="info" style="background-color: lightgreen;">Title</th>
+<th class="info" style="background-color: lightgreen;">Image</th>
+<th class="info" style="background-color: lightgreen;">Price</th>
+ <th class="info" style="background-color: lightgreen;">Url</th>
+<th class="info" style="background-color: lightgreen;">Remove</th>
+
+{% for dri in wish  %}
+
+<tr>
+     <td>{{ dri.nam}}</td>
+    <td>{{ dri.site}}</td>
+    <td>{{ dri.title}}</td>
+    <td><img style="max-width: 200px;max-height:140px;" src="{{ dri.image }}" alt="" class="d-block mx-auto mb-3"></td>
+    <td>{{ dri.price}}</td>
+    <td><a href="{{ dri.url}}">{{ dri.url}}</a> </td>
+
+    <td><a href="remove?id={{ dri.id}}" class=" btn btn-danger">Remove</a></td>
+
+
+</tr>
+
+    {% endfor %}
+</table>
+
+
+
+
+	{% endblock %}
+

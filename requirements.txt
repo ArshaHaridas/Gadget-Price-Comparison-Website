@@ -1,0 +1,7 @@
+django
+bs4
+gunicorn
+pathlib
+whitenoise
+requests
+beautifulsoup4

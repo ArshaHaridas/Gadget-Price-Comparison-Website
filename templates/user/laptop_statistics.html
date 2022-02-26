@@ -1,0 +1,50 @@
+{% extends 'user/user_base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+        <br>
+{#            <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>#}
+          </div><br>
+   <div class="centered">
+<center><h2>Laptop Sales Analysis</h2>
+   <img src="{% static './img/laptop sales.png' %}"></center>
+  </div>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+   <table class="table table-bordered table-striped table-hover" style="width: 900px;>
+
+<th class="info" style="background-color: lightgreen;">
+{#    <tr>#}
+{#<th class="info" style="background-color: lightgreen;">Comment</th>#}
+{##}
+{#</tr>#}
+
+
+{% for dri in commen  %}
+
+<tr>
+    <td>{{ dri.user.first_name}}</td>
+    <td>{{ dri.comment}}</td>
+
+
+
+
+
+
+</tr>
+
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

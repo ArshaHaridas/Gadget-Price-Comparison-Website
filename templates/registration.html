@@ -1,0 +1,106 @@
+
+ {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+     {% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-7">
+						<!-- Billing Details -->
+						<div class="billing-details">
+							<div class="section-title">
+								<h3 class="title">User Registration</h3>
+							</div>
+
+							<form method="post" action=""  enctype="multipart/form-data" >
+       {% csrf_token %}
+    <label for="fname">Name</label>
+    <input type="text" id="fname" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" name="name" placeholder="Your name.." onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"  required >
+<label for="lname">Mobile No</label>
+    <input type="text" id="lname" name="mobile" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" placeholder="Your mobile no.."required>
+
+
+
+  <label for="lname">Email</label>
+    <input type="email" id="lname" name="email" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" placeholder="Your email.."required>
+
+
+  <label for="lname">Username</label>
+    <input type="text" id="lname" name="username" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" placeholder="Your username.." required>
+
+  <label for="lname">Password</label>
+    <input type="password" pattern=".{8,}" title="Eight or more characters" name="password" style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;" placeholder="Your password.." required id="pw" onclick="pass()">
+                                   <span id="msg3" style="color: red"></span>
+
+
+    <input type="submit" style="width: 100%;background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;" value="Submit">
+  </form>
+						</div>
+					
+					</div>
+
+			
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+ {% endblock %}
+
